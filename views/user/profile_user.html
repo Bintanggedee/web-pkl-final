@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Profile</title>
+
+    <!-- CSS FILES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;400;700&display=swap" rel="stylesheet">
+
+    <link href="/../../css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="/../../css/bootstrap-icons.css" rel="stylesheet">
+
+    <link href="/../../css/templatemo-festava-live.css" rel="stylesheet">
+
+</head>
+
+<main>
+
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+
+
+ <!-- Boxicons CSS -->
+ <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  </head>
+    
+ <body class>
+   <!-- navbar -->
+
+   <header>
+        <nav class="navbar">
+          <div class="logo_item">
+            <i class="bx bx-menu" id="sidebarOpen"></i>
+            <img src="images/logo.png" alt=""></i>PKL UHAMKA
+            
+          </div>
+    
+          <!-- <div class="search_bar">
+            <input type="text" placeholder="Search" />
+          </div> -->
+    
+          <div class="navbar_content">
+            <!-- <i class="bi bi-grid"></i> -->
+            <i class='bx bx-sun' id="darkLight"></i>
+            <!-- <i class='bx bx-bell' ></i>
+            <img src="images/profile.jpg" alt="" class="profile" /> -->
+          </div>
+        </nav>
+      </header>
+      
+  
+      <!-- sidebar -->
+      <nav class="sidebar">
+      
+        <div class="menu_content">
+          <ul class="menu_items">
+            <div class="menu_title menu_menu"></div>
+            <!-- duplicate or remove this li tag if you want to add or remove navlink with submenu -->
+            <!-- start -->
+            <li class="item">
+              <div href="#" class="nav_link submenu_item">
+                <span class="navlink_icon">
+                  <i class="fas fa-home"></i>
+                </span>
+                <span class="navlink">Halaman Utama</span>
+                <i class="bx bx-chevron-right arrow-left"></i>
+              </div>
+  
+              <ul class="menu_items submenu">
+                <!-- <a href="/login" class="nav_link sublink">Login</a> -->
+                <a href="/home_user" class="nav_link sublink">Halaman Utama</a>
+                <a href="#section_2" class="nav_link sublink">Tentang</a>
+                <a href="#section_3" class="nav_link sublink">Syarat & Alur</a>
+              </ul>
+            </li>
+            <!-- end -->
+  
+            <!-- duplicate this li tag if you want to add or remove  navlink with submenu -->
+            <!-- start -->
+            <!-- <li class="item">
+              <div href="#" class="nav_link submenu_item">
+                <span class="navlink_icon">
+                  <i class="bx bx-grid-alt"></i>
+                </span>
+                <span class="navlink">Overview</span>
+                <i class="bx bx-chevron-right arrow-left"></i>
+              </div>
+  
+              <ul class="menu_items submenu">
+                <a href="#" class="nav_link sublink">Nav Sub Link</a>
+              </ul>
+            </li>
+          </ul> -->
+          <!-- end -->
+  
+          <ul class="menu_items">
+            <div class="menu_title menu_editor"></div>
+            <!-- duplicate these li tag if you want to add or remove navlink only -->
+  
+            <li class="item">
+              <a href="/profile_user" class="nav_link">
+                <span class="navlink_icon">
+                  <i class="fas fa-user-circle"></i>
+                </span>
+                <span class="navlink">Akun Saya</span>
+              </a>
+            </li>
+
+            <li class="item">
+              <a href="/logout" onclick="return confirm('Apakah anda yakin ingin keluar?')" class="nav_link">
+                <span class="navlink_icon">
+                  <i class="fas fa-user-times"></i>
+                </span>
+                <span class="navlink">Keluar</span>
+              </a>
+            </li>
+          <!-- Sidebar Open / Close -->
+          <div class="bottom_content">
+            <div class="bottom expand_sidebar">
+              <span> Expand</span>
+              <i class='bx bx-log-in' ></i>
+            </div>
+            <div class="bottom collapse_sidebar">
+              <span> Collapse</span>
+              <i class='bx bx-log-out'></i>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+
+      
+    
+    
+      <!-- JavaScript -->
+      <script src="/js/script.js"></script>
+    </head>
+    </body>
+
+
+        <section class="data-section section-padding">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-6 col-10 mx-auto">
+                      <form class="custom-form data-form mb-5 mb-lg-0" action="/home_user" method="post" role="form">
+                            <h2 class="text-center mb-4">Akun Saya</h2>
+
+                            <div class="ticket-form-body">
+                              <label for="nim"><h7 class="text mb-4">Nim</label></h7>
+                                <input type="text" class="form-control" name="nim" value="{{.nim}}" disabled>
+                                    <!-- placeholder="Ph 085-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required=""> -->
+                                
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                      <label for="username"><h7 class="text mb-4">Username</label></h7>
+                                        <input type="text" name="username" value="{{.username}}" id="username"
+                                            class="form-control" disabled>
+                                    </div>
+
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                      <label for="Password"><h7 class="text mb-4">Password</label></h7>
+                                        <input type="password" name="password" value="{{.password}}" id="password" class="form-control"
+                                            disabled>
+                                    </div>
+
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                      <label for="nama"><h7 class="text mb-4">Nama</label></h7>
+                                        <input type="text" name="nama" value="{{.nama}}" id="nama" class="form-control"
+                                            disabled>
+                                    </div>
+
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                      <label for="asal_instansi"><h7 class="text mb-4">Asal Instansi</label></h7>
+                                        <input type="text" name="asal_instansi" value="{{.asal_instansi}}" id="asal_instansi" class="form-control" 
+                                            disabled>
+                                    </div>
+                                </div>
+                            
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                      <label for="mulai_pkl"><h7 class="text mb-4">Mulai PKL</label></h7>
+                                            <input type="text" name="mulai_pkl" value="{{.mulai_pkl.Format "2006-01-02"}}" id="mulai_pkl"
+                                                class="form-control" disabled></font>
+                                    </div>
+
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                      <label for="selesai_pkl"><h7 class="text mb-4">Selesai PKL</label></h7>
+                                            <input type="text" name="selesai_pkl" value="{{.selesai_pkl.Format "2006-01-02"}}" id="selesai_pkl" class="form-control"
+                                                disabled></font>
+                                    </div>
+
+                                    <div class="col-lg-6 col-md-6 col-12 d-none">
+                                      <label for="role"><h7 class="text mb-4">Role</label></h7>
+                                        <input type="text" name="role" value="{{.role}}" id="role"
+                                            class="form-control" disabled>
+                                    </div>
+                                      <div class="col-lg-6 col-md-6 col-12">
+                                        <label for="status"><h7 class="text mb-4">Status PKL</label></h7>
+                                        <select id="status" name="status" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" disabled>
+                                            <option value="0" {{if eq .status 0}}selected{{end}}>Tidak Aktif</option>
+                                            <option value="1" {{if eq .status 1}}selected{{end}}>Aktif</option>
+                                            <option value="2" {{if eq .status 2}}selected{{end}}>Selesai</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                      <label for="respon"><h7 class="text mb-4">Respon Surat</label></h7>
+                                      <select id="respon" name="respon" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" disabled>
+                                          <option value="1" {{if eq .respon 1}}selected{{end}}>Pending</option>
+                                          <option value="2" {{if eq .respon 2}}selected{{end}}>Accepted</option>
+                                          <option value="3" {{if eq .respon 3}}selected{{end}}>Rejected</option>
+                                      </select>
+                                  </div>                           
+                                      </div>
+
+                                      <!-- changes  -->
+
+                                <!-- changes -->
+                                </div>
+                            
+                            <font color="#cebc1b"><strong>
+                                <br>
+                                <a href="/edit_profile_user">Edit Profil</a></strong></font>
+
+                                <!-- <div class="col-lg-4 col-md-10 col-8 mx-auto">
+                                  <p><a href="/edit_profile_user" class="btn btn-primary">Edit Profil</a></p>
+                                </div>  
+                                <br> -->
+                                <br>
+                                <br>
+                                
+                                <!-- <div class="row">
+                                  <div class="col-lg-6 col-md-6 col-12">
+                                    <label for="respon"><h7 class="text mb-4">Surat</label></h7>
+                                    {{ if .upload_file }} 
+                                    <p><a href="{{ .upload_file }}" class="btn btn-primary btn-block">Lihat File</a></p>
+                                    {{ else }}
+                                    <p>Tidak ada file</p>
+                                    {{ end }}
+                                  </div>
+  
+                                  <div class="col-lg-6 col-md-6 col-12">
+                                    <label for="respon"><h7 class="text mb-4">Sertifikat</label></h7>
+                                    {{ if .sertifikat }}
+                                    <p><a href="{{ .sertifikat }}" class="btn btn-primary btn-block">Lihat Sertifikat</a></p>
+                                    {{ else }}
+                                    <p>Tidak ada sertifikat</p>
+                                    {{ end }}
+                                  </div>
+                                  <!-- changes -->
+  
+                          </div> -->
+                        </form>
+                    </div>
+                </div>
+          <br>
+          <div class="container">
+                  <div class="row">
+                  <div class="col-lg-6 col-10 mx-auto">
+                      <form class="custom-form ticket-form mb-5 mb-lg-0" action="/home_user" method="post" role="form" enctype="multipart/form-data">
+                        <div class="row">
+                          <div class="col-lg-6 col-md-6 col-12">
+                            <label for="respon"><h7 class="text mb-4">Surat</label></h7>
+                            {{ if .upload_file }} 
+                            <p><a href="{{ .upload_file }}" class="btn btn-primary btn-block">Lihat Surat</a></p>
+                            {{ else }}
+                            <p>Belum ada surat</p>
+                            {{ end }}
+                          </div>
+
+                          <div class="col-lg-6 col-md-6 col-12">
+                            <label for="respon"><h7 class="text mb-4">Sertifikat</label></h7>
+                            {{ if .sertifikat }}
+                            <p><a href="{{ .sertifikat }}" class="btn btn-primary btn-block">Lihat Sertifikat</a></p>
+                            {{ else }}
+                            <p>Belum ada sertifikat</p>
+                            {{ end }}
+                          </div>
+                          <!-- changes -->
+
+                  </div>
+                      </form>
+                  </div>
+              </div>
+              </main>
+
+  <!-- JAVASCRIPT FILES -->
+  <script src="/../../js/jquery.min.js"></script>
+  <script src="/../../js/bootstrap.min.js"></script>
+  <script src="/../../js/jquery.sticky.js"></script>
+  <script src="/../../js/click-scroll.js"></script>
+  <script src="/../../js/custom.js"></script>
+  <script src="/../../js/script.js"></script>
+</body>
+</html>
