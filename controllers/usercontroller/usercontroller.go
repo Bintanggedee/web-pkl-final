@@ -88,47 +88,6 @@ func EditProfileUser(w http.ResponseWriter, r *http.Request) {
 		newUsername := r.FormValue("new_username")
 		newPassword := r.FormValue("new_password")
 
-		// //upload file
-		// // Mengecek apakah folder pengguna sudah ada, jika tidak, maka membuatnya
-		// userFolder := fmt.Sprintf("uploads/%s", username)
-		// if _, err := os.Stat(userFolder); os.IsNotExist(err) {
-		// 	os.Mkdir(userFolder, os.ModePerm)
-		// }
-
-		// // Menerima file yang diunggah
-		// file, handler, err := r.FormFile("upload_file")
-		// if err != nil {
-		// 	http.Error(w, err.Error(), http.StatusInternalServerError)
-		// 	return
-		// }
-		// defer file.Close()
-
-		// // Menyimpan file ke folder pengguna dengan nama yang unik
-		// fileName := filepath.Join(userFolder, fmt.Sprintf("%d_%s", time.Now().Unix(), handler.Filename))
-		// f, err := os.Create(fileName)
-		// if err != nil {
-		// 	http.Error(w, err.Error(), http.StatusInternalServerError)
-		// 	return
-		// }
-		// defer f.Close()
-
-		// _, err = io.Copy(f, file)
-		// if err != nil {
-		// 	http.Error(w, err.Error(), http.StatusInternalServerError)
-		// 	return
-		// }
-
-		// // Simpan path file ke dalam database
-		// if fileName != "" {
-		// 	_, err = db.Exec("UPDATE users SET upload_file = ? WHERE username = ?", fileName, username)
-		// 	if err != nil {
-		// 		http.Error(w, err.Error(), http.StatusInternalServerError)
-		// 		return
-		// 	}
-
-		// }
-		// //upload file
-
 		if newUsername != "" {
 			_, err := db.Exec("UPDATE users SET username = ? WHERE username = ?", newUsername, username)
 			if err != nil {

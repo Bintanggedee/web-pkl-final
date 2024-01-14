@@ -58,44 +58,6 @@ func RegisterAdmin(w http.ResponseWriter, r *http.Request) {
 	respon := r.FormValue("respon")
 	sertifikat := r.FormValue("sertifikat")
 
-	// upload file
-	// // Menerima file yang diunggah
-	// file, handler, err := r.FormFile("upload_file")
-	// if err != nil {
-	// 	http.Error(w, err.Error(), http.StatusInternalServerError)
-	// 	return
-	// }
-	// defer file.Close()
-
-	// // Menyimpan file ke folder uploads dengan nama unik
-	// fileName := filepath.Join("uploads", username, handler.Filename)
-	// err = os.MkdirAll(filepath.Dir(fileName), 0755)
-	// if err != nil {
-	// 	http.Error(w, err.Error(), http.StatusInternalServerError)
-	// 	return
-	// }
-
-	// f, err := os.Create(fileName)
-	// if err != nil {
-	// 	http.Error(w, err.Error(), http.StatusInternalServerError)
-	// 	return
-	// }
-	// defer f.Close()
-
-	// _, err = io.Copy(f, file)
-	// if err != nil {
-	// 	http.Error(w, err.Error(), http.StatusInternalServerError)
-	// 	return
-	// }
-
-	// // Simpan informasi file ke database
-	// _, err = db.Exec("UPDATE users SET upload_file = ? WHERE username = ?", fileName, username)
-	// if err != nil {
-	// 	http.Error(w, err.Error(), http.StatusInternalServerError)
-	// 	return
-	// }
-	// upload file
-
 	users := entities.QueryUser(username)
 
 	if (entities.User{}) == users {
@@ -451,8 +413,6 @@ func UploadSertif(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	// The rest of your code remains the same
-	// You can display the form for file upload in your HTML as you've shown
 	username := r.URL.Query().Get("username")
 
 	if len(username) == 0 {
