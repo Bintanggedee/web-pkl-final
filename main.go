@@ -62,6 +62,6 @@ func main() {
 	http.HandleFunc("/login", logincontroller.Login)
 
 	// Run server
-	log.Println("Server running on port: 8524")
-	log.Fatal(http.ListenAndServe(":8524", nil))
+	log.Println("Server running on port: 8523")
+	log.Fatal(http.ListenAndServe(":8523", nil))
 }
