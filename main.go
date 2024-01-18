@@ -48,11 +48,9 @@ func main() {
 	http.HandleFunc("/save_sertif", adminmodels.SaveSertif)
 
 	// 3. User
-
 	http.HandleFunc("/home_user", usercontroller.HomeUser)
 	http.HandleFunc("/profile_user", usercontroller.ProfileUser)
 	http.HandleFunc("/edit_profile_user", usercontroller.EditProfileUser)
-
 	http.HandleFunc("/save_profile_user", usermodels.SaveProfileUser)
 
 	// 4. Logout
@@ -62,6 +60,6 @@ func main() {
 	http.HandleFunc("/login", logincontroller.Login)
 
 	// Run server
-	log.Println("Server running on port: 8523")
-	log.Fatal(http.ListenAndServe(":8523", nil))
+	log.Println("Server running on port: 8525")
+	log.Fatal(http.ListenAndServe(":8525", nil))
 }

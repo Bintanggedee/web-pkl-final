@@ -53,16 +53,16 @@ func Login(w http.ResponseWriter, r *http.Request) {
 		if role == 1 {
 			// Admin login
 			http.Redirect(w, r, "/home_admin", http.StatusSeeOther)
-			fmt.Println("Sukses")
+			fmt.Println("Berhasil Masuk")
 		} else {
 			// User login
 			http.Redirect(w, r, "/home_user", http.StatusSeeOther)
-			fmt.Println("Sukses")
+			fmt.Println("Berhasil Masuk")
 		}
 	} else {
 		// Login failed
 		fmt.Println("Gagal, username atau password salah")
-		fmt.Fprint(w, "Gagal")
+		fmt.Fprint(w, "Gagal, username atau password salah")
 		http.Redirect(w, r, "/login", http.StatusFound)
 	}
 }
